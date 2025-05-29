@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/', // Important for GH Pages
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     emptyOutDir: true,
   },
   server: {
