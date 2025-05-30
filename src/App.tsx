@@ -1,6 +1,8 @@
 import ProjectsSection from "./components/projects-section"
 import SocialLinks from "./components/social-links"
 import AboutSection from "./components/about-section"
+// React typing animation library
+import { Typewriter } from 'react-simple-typewriter';
 
 function App() {
   return (
@@ -39,7 +41,25 @@ function App() {
       {/* Hero Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Hi, I'm YiJie</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <Typewriter
+              words={[
+                "Initializing brain cells...",
+                "Compiling personality 🤖",
+                "Oops, null pointer... retrying",
+                "Now loading intro screen...",
+                "Boot sequence complete ✅",
+                "Hi, I'm YiJie 👋"
+              ]}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={1200}
+            />
+          </h1>
+
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Year 3 Information Technology student at Singapore Polytechnic,<br />
             specializing in Software Development with a focus on Java and full-stack projects.
