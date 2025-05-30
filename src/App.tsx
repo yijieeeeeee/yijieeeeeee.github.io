@@ -1,8 +1,8 @@
 import ProjectsSection from "./components/projects-section"
 import SocialLinks from "./components/social-links"
+import AboutSection from "./components/about-section"
 
 function App() {
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -22,7 +22,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <a href="#about" className="text-gray-600 hover:text-gray-900">
                   About
                 </a>
               </li>
@@ -50,6 +50,9 @@ function App() {
           <SocialLinks className="justify-center" />
         </div>
       </section>
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Projects Section */}
       <ProjectsSection />
