@@ -5,6 +5,7 @@ interface SocialLink {
   name: string
   url: string
   icon: React.ReactNode
+  tooltip: string
 }
 
 interface SocialLinksProps {
@@ -14,18 +15,25 @@ interface SocialLinksProps {
 
 export default function SocialLinks({ links = defaultLinks, className = "" }: SocialLinksProps) {
   return (
-    <div className={`flex items-center space-x-4 ${className}`}>
+    <div className={`flex items-center space-x-6 ${className}`}>
       {links.map((link) => (
-        <a
-          key={link.id}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
-          aria-label={link.name}
-        >
-          {link.icon}
-        </a>
+        <div key={link.id} className="relative group">
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer" // Ensures security by preventing the new page from accessing the original page
+            className="text-gray-600 hover:text-gray-900 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 block p-2 rounded-lg hover:bg-gray-100"
+            aria-label={link.name}
+          >
+            {link.icon}
+          </a>
+          {/* Tooltip */}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
+            {link.tooltip}
+            {/* Tooltip arrow */}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+          </div>
+        </div>
       ))}
     </div>
   )
@@ -49,6 +57,24 @@ const GithubIcon = () => (
   </svg>
 )
 
+const SchoolIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-6"
+  >
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+  </svg>
+)
+
 const LinkedInIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +94,7 @@ const LinkedInIcon = () => (
   </svg>
 )
 
-const TwitterIcon = () => (
+const GmailIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -81,28 +107,39 @@ const TwitterIcon = () => (
     strokeLinejoin="round"
     className="w-6 h-6"
   >
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
   </svg>
 )
 
-// Placeholder social links data
+// Updated social links data with tooltips and different icon for school
 const defaultLinks: SocialLink[] = [
   {
     id: 1,
-    name: "GitHub",
+    name: "GitHub Personal",
     url: "https://github.com/Punbelievable",
     icon: <GithubIcon />,
+    tooltip: "Personal Projects",
   },
   {
     id: 2,
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/tan-yijie/",
-    icon: <LinkedInIcon />,
+    name: "GitHub School",
+    url: "https://github.com/YiJie-ProjectINC",
+    icon: <SchoolIcon />,
+    tooltip: "School Projects",
   },
   {
     id: 3,
-    name: "Twitter",
-    url: "https://twitter.com/yourusername",
-    icon: <TwitterIcon />,
-  }
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/tan-yijie/",
+    icon: <LinkedInIcon />,
+    tooltip: "Professional Profile",
+  },
+  {
+    id: 4,
+    name: "Gmail",
+    url: "mailto:yijieschool@gmail.com",
+    icon: <GmailIcon />,
+    tooltip: "Send me an email",
+  },
 ]

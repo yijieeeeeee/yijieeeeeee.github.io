@@ -41,7 +41,11 @@ function App() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Hi, I'm YiJie</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            I'm a full-stack developer passionate about creating beautiful and functional web applications.
+            Year 3 Information Technology student at Singapore Polytechnic,<br />
+            specializing in Software Development with a focus on Java and full-stack projects.
+          </p>
+          <p className="text-md text-gray-500 mb-8 max-w-xl mx-auto">
+            Currently gaining real-world experience through the Project Industry Now Curriculum (INC) pathway.
           </p>
           <SocialLinks className="justify-center" />
         </div>
