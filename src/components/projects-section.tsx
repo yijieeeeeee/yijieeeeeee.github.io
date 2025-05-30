@@ -106,8 +106,21 @@ export default function ProjectsSection({ projects = defaultProjects }: Projects
 
 // Updated projects data
 const defaultProjects: Project[] = [
-  {
+    {
     id: 1,
+    title: "VeggieLens - Telegram Bot",
+    description:
+      "[In Progress 🛠️] VeggieLens is a Telegram Bot that helps vegetarians and vegans find nearby restaurants, scan product barcodes for ingredient insights, and chat with an AI for plant-based tips. It features an interactive map, AI chatbot, and serverless architecture hosted on AWS Lambda.",
+    imageUrls: [
+      "https://res.cloudinary.com/dycbfyja1/image/upload/v1748625939/Screenshot_2025-05-31_012331_zx97wp.png",
+      "https://res.cloudinary.com/dycbfyja1/image/upload/v1748625941/Screenshot_2025-05-31_012416_ij3wed.png",
+      "https://res.cloudinary.com/dycbfyja1/image/upload/v1748626073/Screenshot_2025-05-31_012736_ecsenu.png"
+    ],
+    tags: ["Node.js", "AWS Lambda", "Telegram Bot API", "Google Places API", "LeafletJS", "Vercel"],
+    link: "https://t.me/Herbivore_Bot",
+  },
+  {
+    id: 2,
     title: "Sustainable Object Detection",
     description:
       "A web-based and camera-based system that detects recyclable objects using MediaPipe Vision. Built during a hackathon (TryHack) organized by SEED at Singapore Polytechnic.",
@@ -119,7 +132,7 @@ const defaultProjects: Project[] = [
     link: "https://seedhackathon.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Graphical & Standard Calculator App",
     description: "A mobile calculator built with React Native and Expo. Includes a standard calculator for basic arithmetic and a graphical calculator that plots mathematical expressions using Plotta.js.",
     imageUrls: ["https://res.cloudinary.com/dycbfyja1/image/upload/v1748596836/Screenshot_2025-05-30_170906_xsxurj.png"],
@@ -127,7 +140,7 @@ const defaultProjects: Project[] = [
     link: "https://expo.dev/preview/update?message=Graphing%20Feature&updateRuntimeVersion=1.0.0&createdAt=2024-08-29T16%3A25%3A09.680Z&slug=exp&projectId=f0bc4007-29d8-47f2-973c-fa5c885f4492&group=3cc05160-5e3c-4864-a95e-9ffc556825c3",
   },
   {
-    id: 3,
+    id: 4,
     title: "Finance Tracker",
     description: "Track and visualize your personal finances with this Streamlit web app. Features include secure Google login, transaction history, and interactive data visualizations.",
     imageUrls: [
@@ -139,7 +152,7 @@ const defaultProjects: Project[] = [
     link: "https://finance-tracker-yj.streamlit.app/"
   },
   {
-    id: 4,
+    id: 5,
     title: "QR Code Generator",
     description: "A simple and lightweight web app to generate QR codes from text or URLs using vanilla HTML, CSS, and JavaScript. Built with no frameworks or build tools — just static files.",
     imageUrls: [
@@ -150,7 +163,7 @@ const defaultProjects: Project[] = [
     link: "https://qr-code-generator-henna-two.vercel.app/"
   },
   {
-    id: 5,
+    id: 6,
     title: "Classic Snake Game",
     description: "A JavaScript and Canvas-based Snake game with smooth controls, score tracking, and start/game over screens.",
     imageUrls: [
